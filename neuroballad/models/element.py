@@ -12,8 +12,10 @@ class Element(object):
     params = {}
     _ndcomp = None
 
-    def __init__(self, name="", **kwargs):
-        self.space = {'name': name}
+    def __init__(self, name="", component_units=1, device="/CPU:0", **kwargs):
+        self.space = {'name': name,
+                      'component_units': component_units,
+                      'device': device}
         self.space.update(self.states)
         self.space.update(self.params)
         self.space.update(kwargs)
