@@ -47,10 +47,12 @@ def NeuroballadModelGenerator(model_name, arg_names):
                     key, model_name, ', '.join(arg_names)))
             setattr(self, key, value)
 
-    def nadd(self, G, i):
+    def nadd(self, G, i, component_units=1, device="/CPU:0"):
         name = 'uid' + str(i)
         node_name = self.__class__.__name__
-        dict_struct = {'class': node_name}
+        dict_struct = {'class': node_name,
+                       'component_units': component_units,
+                       'device': device}
         for key in self.arg_names:
             try:
                 dict_struct[key] = getattr(self, key)

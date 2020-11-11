@@ -33,3 +33,9 @@ class MorrisLecar(Element):
               'g_L': 3., 
               'g_Ca': 4., 
               'g_K': 16.}
+
+class GABA_A(Element):
+    element_class = 'synapse'
+
+class GABA_B(Element):
+    element_class = 'synapse'
